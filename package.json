@@ -1,0 +1,14 @@
+{
+  "name": "mock-fetch-api",
+  "version": "1.0.1",
+  "description": "Mock fetch API emulates fetchAPI. Created for writing unit tests for server communication emulating the fetch API.",
+  "main": "mock-fetch-api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fetch"
+  ],
+  "author": "Lar",
+  "license": "ISC"
+}
