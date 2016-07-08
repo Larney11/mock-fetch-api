@@ -1,7 +1,7 @@
 {
   "name": "mock-fetch-api",
-  "version": "1.0.5",
-  "description": "Mock fetch API emulates fetchAPI. Created for writing unit tests for server communication emulating the fetch API.",
+  "version": "1.0.6",
+  "description": "Mock http requests and responses using fetch API (or isomorphic-fetch). Straight forward functions makes it simple to create customizable and legible unit tests.",
   "main": "mock-fetch-api.js",
   "repository": {
     "type": "git",
