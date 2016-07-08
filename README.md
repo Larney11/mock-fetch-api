@@ -1,6 +1,6 @@
 # mock-fetch-api
-<<<<<<< HEAD
-This is a mock fetch API created for unit testing communication between a server
+Mock http requests and responses using fetch API (or [isomorphic-fetch](https://www.npmjs.com/package/isomorphic-fetch)). Straight forward functions makes it simple to create customizable and legible unit tests.
+
 
 ## Installation
     npm install --save-dev mock-fetch-api
@@ -26,27 +26,27 @@ withExpectedHeader('Content-Type', 'application/json')
 
 
 #### otherwiseRespondWith()
-The otherwiseRespondWith() function sets the Response if the header does not match the header set in the withExpectedHeader() function  
+The otherwiseRespondWith() function sets the response if the header specified with the  withExpectedHeader() function does not correspond with the header passed to the fetch() function.  
 ```js
 otherwiseRespondWith(status, statusText)  
 otherwiseRespondWith(401, 'not authorised')  
 ```
 
 #### respondWith()
-The respondWith() function sets the Response if all the requirements specified with the when() and withExpectedHeader() functions correspond with what is passed to the fetch().  
+The respondWith() function sets the response if all the requirements specified with the when() and withExpectedHeader() functions correspond with what is passed to the fetch() function.  
 ```js
 respondWith(status, data)  
 respondWith(401, '{"data":[{"text":"Hello"},{"text":"Goodbye"}]}')  
 ```
 
 #### failNextCall()
-The failNextCall() function forces the fetch to reject().  
+The failNextCall() function forces the fetch to reject.  
 ```js
 failNextCall()
 ```
 
 ## Examples
-<strong>Check out the '__tests__' directory to view all examples. </strong> https://github.com/Larney11/mock-fetch-api/blob/master/__tests__/mock-fetch-api-test.js  
+<strong>Check out the '__tests__' directory to view all examples. </strong> https://github.com/Larney11/mock-fetch-api/blob/master/tests/mock-fetch-api-test.js  
 
 The following examples are unit tests using Jest.  
 
@@ -142,6 +142,3 @@ pit("rejects the promise when simulating a failed network connection", () => {
    });
 });
 ```
-=======
-gjgj
->>>>>>> 960029188f4489b5b53e199ea4b6e4ca84f3a184
