@@ -73,7 +73,8 @@ global.fetch = function(uri, options) {
             }
 
             return resolve(new Response(criteria.response.jsonData, {
-               status: criteria.response.status
+               status: criteria.response.status,
+               headers: criteria.headers
             }));
 
          }
@@ -125,11 +126,12 @@ module.exports = {
          },
 
 
-         respondWith: function(status, data) {
+         respondWith: function(status, data, headers) {
 
             condition.response = {
                status: status,
-               jsonData: data
+               jsonData: data,
+               headers: headers
             };
 
             conditions.push(condition);
