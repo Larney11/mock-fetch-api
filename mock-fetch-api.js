@@ -33,6 +33,15 @@ global.fetch = function(uri, options) {
       headers: null,
    }, options || {});
 
+   if (uri instanceof Request) {
+        options = uri;
+        uri = uri.url;
+
+        if (!options.method) {
+            options.method = 'GET'
+        }
+    }
+   
    return new Promise(function(resolve, reject) {
 
       if(failNextCall) {
