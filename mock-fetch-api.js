@@ -33,6 +33,15 @@ global.fetch = function(uri, options) {
       headers: null,
    }, options || {});
 
+   if (uri instanceof Request) {
+        options = uri;
+        uri = uri.url;
+
+        if (!options.method) {
+            options.method = 'GET'
+        }
+    }
+   
    return new Promise(function(resolve, reject) {
 
       if(failNextCall) {
@@ -73,7 +82,8 @@ global.fetch = function(uri, options) {
             }
 
             return resolve(new Response(criteria.response.jsonData, {
-               status: criteria.response.status
+               status: criteria.response.status,
+               headers: criteria.headers
             }));
 
          }
@@ -125,11 +135,12 @@ module.exports = {
          },
 
 
-         respondWith: function(status, data) {
+         respondWith: function(status, data, headers) {
 
             condition.response = {
                status: status,
-               jsonData: data
+               jsonData: data,
+               headers: headers
             };
 
             conditions.push(condition);
