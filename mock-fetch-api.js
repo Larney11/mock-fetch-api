@@ -83,7 +83,7 @@ global.fetch = function(uri, options) {
 
             return resolve(new Response(criteria.response.jsonData, {
                status: criteria.response.status,
-               headers: criteria.headers
+               headers: criteria.response.headers
             }));
 
          }
